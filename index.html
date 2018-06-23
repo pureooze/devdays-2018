@@ -33,13 +33,12 @@
 			</section>
 			<section>
 				<h2>
-					The Basics
+					Pure Functional Programming
 				</h2>
 				<ul>
-					<li>State</li>
-					<li>Mutation</li>
-					<li>Side effect</li>
-					<li>Pure functions</li>
+					<li>Avoid shared state</li>
+					<li>Avoid mutability</li>
+					<li>Avoid side effects</li>
 				</ul>
 			</section>
 			<section>
@@ -49,6 +48,49 @@
 				<h2>Shared State</h2>
 				<blockquote cite="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0">Shared state is any variable, object, or memory space that exists in a shared scope, or as the property of an object
 					being passed between scopes</blockquote>
+			</section>
+			<section>
+				<h2>Avoiding Shared State</h2>
+				<ul>
+					<li>Remove call time dependencies </li>
+					<li>Order of execution does not matter</li>
+					<li>Prefer immutability over mutability</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Immutability</h2>
+				<pre class="javascript">
+						<code data-trim>
+						const someObject = Object.freeze({
+							Hello: 'world,',
+							foo: 'bar',
+						});
+
+						someObject.foo = 'baz';
+						// Error: Cannot assign to read only
+						// property 'foo' of object Object
+						</code>
+				</pre>
+			</section>
+			<section>
+				<h2>Side Effects</h2>
+				<blockquote cite="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0">
+					A side effect is any application state change that is observable outside the called function other than its return value.
+				</blockquote>
+			</section>
+			<section>
+				<pre class="javascript">
+					<code data-trim>
+					let sideEffect = 1;
+
+					function add(amount){
+						sideEffect = sideEffect + amount;
+					}
+
+					add(1); //sideEffect = 2
+					add(1); //sideEffect = 3
+					</code>
+				</pre>
 			</section>
 		</div>
 	</div>
