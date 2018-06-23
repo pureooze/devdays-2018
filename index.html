@@ -33,13 +33,12 @@
 			</section>
 			<section>
 				<h2>
-					The Basics
+					Pure Functional Programming
 				</h2>
 				<ul>
-					<li>State</li>
-					<li>Mutation</li>
-					<li>Side effect</li>
-					<li>Pure functions</li>
+					<li>Avoid shared state</li>
+					<li>Avoid mutability</li>
+					<li>Avoid side effects</li>
 				</ul>
 			</section>
 			<section>
@@ -55,7 +54,43 @@
 				<ul>
 					<li>Remove call time dependencies </li>
 					<li>Order of execution does not matter</li>
+					<li>Prefer immutability over mutability</li>
 				</ul>
+			</section>
+			<section>
+				<h2>Immutability</h2>
+				<pre class="javascript">
+						<code data-trim>
+						const someObject = Object.freeze({
+							Hello: 'world,',
+							foo: 'bar',
+						});
+
+						someObject.foo = 'baz';
+						// Error: Cannot assign to read only
+						// property 'foo' of object Object
+						</code>
+				</pre>
+			</section>
+			<section>
+				<h2>Side Effects</h2>
+				<blockquote>
+					A side effect is any application state change that is observable outside the called function other than its return value.
+				</blockquote>
+			</section>
+			<section>
+				<pre class="javascript">
+					<code data-trim>
+					let sideEffect = 1;
+
+					function add(amount){
+						sideEffect = sideEffect + amount;
+					}
+
+					add(1); //sideEffect = 2
+					add(1); //sideEffect = 3
+					</code>
+				</pre>
 			</section>
 		</div>
 	</div>
