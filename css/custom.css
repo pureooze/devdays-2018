@@ -30,3 +30,30 @@
   border-radius: 100%;
   margin-left: 70px;
 }
+
+.ivory-tower-text {
+  position: absolute;
+  top: 58%;
+  left: 21%;
+  color: black;
+  font-size: 30px !important;
+  background-color: teal;
+  border: 3px solid black !important;
+  padding: 5px !important;
+}
+
+.ocaml-logo {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 30%;
+  right: 20%;
+}
+
+.fsharp-logo {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 18%;
+  left: 25%;
+}
