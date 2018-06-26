@@ -33,13 +33,8 @@
 
 .ivory-tower-text {
   position: absolute;
-  top: 58%;
-  left: 21%;
-  color: black;
-  font-size: 30px !important;
-  background-color: teal;
-  border: 3px solid black !important;
-  padding: 5px !important;
+  top: 57%;
+  left: 23%;
 }
 
 .ocaml-logo {
@@ -54,6 +49,11 @@
   width: 100px;
   height: 100px;
   position: absolute;
-  top: 18%;
+  top: 20%;
   left: 25%;
+}
+
+.javascript-logo {
+  width: 100px;
+  height: 100px;
 }
