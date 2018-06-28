@@ -28,142 +28,39 @@
 	<div class="reveal">
 		<div class="slides">
 			<section>
-				<h1>
+				<h2>
 					Maintaining An Open Source Project
-				</h1>
+				</h2>
 				<span>
 					Uzair Shamim
 				</span>
 			</section>
 			<section>
-				If there is one truth about programmers..
-			</section>
-			<section>
-				<p>We love arguing about pointless things. </p>
-				<p>The more pointless the more passionate we get.</p>
-			</section>
-			<section>
-				<p>Tabs or Spaces?</p>
-			</section>
-			<section>
-				<p>Curly brace on RHS or LHS?</p>
-			</section>
-			<section>
-				<p>Switch Case or If Statement?</p>
-			</section>
-			<section>
-				<pre class="javascript">
-					<code data-trim>
-						function checkValue(value){
-						    switch (value){
-						        default:
-						            console.log('Hey')
-						        case 10:
-						        case 20:
-						            console.log('wtf');
-						            break;
-						    }
-						}
-
-						checkValue(123);
-						// Hey
-						// wtf
-					</code>
-				</pre>
-			</section>
-			<section>
-				<h2>Are these harmful?</h2>
-				Yes!
+				<h3>
+					<span style="color: gold">Goal:</span> Faster Tab Lookup</h3>
 			</section>
 			<section>
 				<figure>
-					<figcaption>The Ivory Tower of Functional Programming</figcaption>
-					<img src="https://img00.deviantart.net/fc18/i/2008/336/b/c/ivory_tower_by_ofthedunes.jpg" />
+					<figcaption>Looking for a solution...</figcaption>
+					<img src="http://i.imgur.com/DtUotPP.png" />
 				</figure>
-
-				<div>
-					<svg style="margin-left: -150px; margin-top: -450px; position: absolute" width="300" height="100">
-
-						<defs>
-							<marker id="arrow" markerWidth="13" markerHeight="13" refx="2" refy="6" orient="auto">
-								<path d="M2,2 L2,11 L10,6 L2,2" style="fill:crimson;" />
-							</marker>
-						</defs>
-
-						<line x1="295" y1="75" x2="175" y2="55" style="stroke:red; stroke-width: 2px;
-																 marker-end: url(#arrow);" />
-
-					</svg>
-					<img class="ocaml-logo" src="data:image/jpeg;base64,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"
-					/>
-				</div>
-
-				<div>
-					<svg style="margin-left: -180px; margin-top: -580px; position: absolute" width="300" height="100">
-
-						<defs>
-							<marker id="arrow" markerWidth="13" markerHeight="13" refx="2" refy="6" orient="auto">
-								<path d="M2,2 L2,11 L10,6 L2,2" style="fill:crimson;" />
-							</marker>
-						</defs>
-
-						<line x1="55" y1="75" x2="125" y2="85" style="stroke:red; stroke-width: 2px;
-																 marker-end: url(#arrow);" />
-
-					</svg>
-					<img class="haskell-logo" src="https://wiki.haskell.org/wikiupload/4/4a/HaskellLogoStyPreview-1.png" />
-				</div>
-
-				<div>
-					<svg style="margin-left: -150px; margin-top: -270px; position: absolute" width="300" height="100">
-
-						<defs>
-							<marker id="arrow" markerWidth="13" markerHeight="13" refx="2" refy="6" orient="auto">
-								<path d="M2,2 L2,11 L10,6 L2,2" style="fill:crimson;" />
-							</marker>
-						</defs>
-
-						<line x1="5" y1="25" x2="85" y2="5" style="stroke:red; stroke-width: 2px;
-																 marker-end: url(#arrow);" />
-
-					</svg>
-					<div class="ivory-tower-text">
-						<img class="javascript-logo" src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" />
-					</div>
-				</div>
 			</section>
 			<section>
-				<h2>
-					Pure Functional Programming
-				</h2>
+				<h2>Saka</h2>
+				<img src="https://i.imgur.com/IVrS44r.png" />
+			</section>
+			<section>
+				<h2>Features</h2>
 				<ul>
-					<li>Avoid shared state</li>
-					<li>Avoid mutability</li>
-					<li>Avoid side effects</li>
+					<li>Search open tabs</li>
+					<li>Search recently closed tabs (sessions)</li>
+					<li>Search browsing history</li>
+					<li>Search bookmarks</li>
 				</ul>
 			</section>
 			<section>
-				<p>
-					<b>What do we do differently?</b>
-				</p>
-				<ul>
-					<li>
-						<span style="color: rgb(236, 60, 169)">No</span> sharing variables between scopes </li>
-					<li>
-						<span style="color: rgb(236, 60, 169)">No</span> assignments to initialized variables</li>
-					<li>
-						<span style="color: rgb(236, 60, 169)">No</span> network calls</li>
-					<li>
-						<span style="color: rgb(236, 60, 169)">No</span> read/write to disk</li>
-					<li>
-						<span style="color: rgb(236, 60, 169)">No</span> users</li>
-				</ul>
-			</section>
-			<section>
-				<p>Pure Functional programming is not realistic</p>
-			</section>
-			<section>
-
+				<h2>In the beginning...</h2>
+				<img src="http://i.imgur.com/LDOowjj.png" />
 			</section>
 		</div>
 	</div>
