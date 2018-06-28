@@ -28,9 +28,9 @@
 	<div class="reveal">
 		<div class="slides">
 			<section>
-				<h2>
-					<span style="color: rgb(236, 60, 169)">Dysfunctional</span> Programming
-				</h2>
+				<h1>
+					Maintaining An Open Source Project
+				</h1>
 				<span>
 					Uzair Shamim
 				</span>
@@ -43,14 +43,33 @@
 				<p>The more pointless the more passionate we get.</p>
 			</section>
 			<section>
-				<p>GOTO Statement Considered Harmful</p>
-				<img src="https://i.imgur.com/ZA5yBfu.png" />
-			</section>
-			<section>
 				<p>Tabs or Spaces?</p>
 			</section>
 			<section>
 				<p>Curly brace on RHS or LHS?</p>
+			</section>
+			<section>
+				<p>Switch Case or If Statement?</p>
+			</section>
+			<section>
+				<pre class="javascript">
+					<code data-trim>
+						function checkValue(value){
+						    switch (value){
+						        default:
+						            console.log('Hey')
+						        case 10:
+						        case 20:
+						            console.log('wtf');
+						            break;
+						    }
+						}
+
+						checkValue(123);
+						// Hey
+						// wtf
+					</code>
+				</pre>
 			</section>
 			<section>
 				<h2>Are these harmful?</h2>
@@ -128,15 +147,20 @@
 					<b>What do we do differently?</b>
 				</p>
 				<ul>
-					<li>No sharing variables between scopes </li>
-					<li>No assignments to initialized variables</li>
-					<li>No network calls</li>
-					<li>No read/write to disk</li>
-					<li>No users</li>
+					<li>
+						<span style="color: rgb(236, 60, 169)">No</span> sharing variables between scopes </li>
+					<li>
+						<span style="color: rgb(236, 60, 169)">No</span> assignments to initialized variables</li>
+					<li>
+						<span style="color: rgb(236, 60, 169)">No</span> network calls</li>
+					<li>
+						<span style="color: rgb(236, 60, 169)">No</span> read/write to disk</li>
+					<li>
+						<span style="color: rgb(236, 60, 169)">No</span> users</li>
 				</ul>
 			</section>
 			<section>
-				<p>Okay so its not realistic...</p>
+				<p>Pure Functional programming is not realistic</p>
 			</section>
 			<section>
 
