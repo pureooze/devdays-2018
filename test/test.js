@@ -8,7 +8,7 @@
 // 3 - Two fragments with same data-fragment-index
 // 4
 
-
+@@ test @@
 Reveal.addEventListener( 'ready', function() {
 
 	// ---------------------------------------------------------------
